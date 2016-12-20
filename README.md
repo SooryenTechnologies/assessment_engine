@@ -63,7 +63,8 @@ Method: GET
 
 Required/Mandatory Parameters: user_id, context_id, role and client_id
 
-Curl: curl -X GET --header 'Accept: application/json' --header 'X-API-KEY: {your_api_key}' http:/root_path/api/v1/quizzes?context_id={context_id}&user_id={user_id}&role={role}
+Curl:
+`curl -X GET --header 'Accept: application/json' --header 'X-API-KEY: {your_api_key}' http:/root_path/api/v1/quizzes?context_id={context_id}&user_id={user_id}&role={role}`
 	
 ###Response of API :
 Success :
