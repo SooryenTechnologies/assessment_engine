@@ -1,66 +1,65 @@
-ASSESSMENT ENGINE :
+#ASSESSMENT ENGINE :
 
-Assessment Engine is a performance evaluation tool which helps the instructor to analyze performance by creating Quiz/Test and evaluating the student's performance.
+	Assessment Engine is a performance evaluation tool which helps the instructor to analyze performance by creating Quiz/Test and evaluating the student's performance.
 
-1 Main Features :
+#1 Main Features :
 	
 
-Quiz :
-CRUD of Quiz
-Quiz List
-Duplicate whole Quiz with Questions
-Get the scores information of the Quiz
-Shuffle Question in the Quiz
-Shuffle Answer in the Question 
+##Quiz :
+	CRUD of Quiz
+	Quiz List
+	Duplicate whole Quiz with Questions
+	Get the scores information of the Quiz
+	Shuffle Question in the Quiz
+	Shuffle Answer in the Question 
 
-Question :
-CRUD of Question
-Question Bank(List of Questions of all Quizzes )
-List of Questions per Quiz
+##Question :
+	CRUD of Question
+	Question Bank(List of Questions of all Quizzes )
+	List of Questions per Quiz
 
-Quiz Submission :
-Manual / Automatically Quiz Submission
-Grade Quiz
-Quiz Submission Results
-Quiz 	Attempt history of the user
+##Quiz Submission :
+	Manual / Automatically Quiz Submission
+	Grade Quiz
+	Quiz Submission Results
+	Quiz Attempt history of the user
 
 
-2 Installation :
+#2 Installation :
 
-For All Mac OS / Linux / Window you need to install “ ruby 2.0.0  & Git ”.
+For All Mac OS / Linux / Window you need to install `ruby 2.0.0  & Git`.
 
 You can install Ruby from here. 
 
 You can install Git from here. 
 				 	
-Go to console/terminal and Clone the code of assessment_engine in your system from here.
+Go to console/terminal and Clone the code of `assessment_engine` repository in your system from here.
 		
-$ git clone assessment_engine_repo_clone_url		
+`$ git clone assessment_engine_repo_clone_url`
 
 Go to assessment_engine folder in the terminal.
 	
-$ cd assessment_engine		
+`$ cd assessment_engine`
 
-Run 	below command.	
+Run below command.	
 
-$ bundle install	
+`$ bundle install`
 
-After 	completion of bundle installation. You can run the application. By below command.
+After completion of bundle installation. You can run the application. By below command.
 		
-$ rails s
+`$ rails s`
 		 	
-You 	can use any other port in an assessment-engine like below.	
+You can use any other port in an assessment-engine like below.	
 
-$ rails s -p 3001
+`$ rails s -p 3001`
 		 	
-You 	can use any API in your application like this.
+You can use any API in your application like this.
 			
-https://localhost:30001/api/v1/quizzes
+`https://localhost:30001/api/v1/quizzes`
 	
-3 Usage 	: 	
+#3 Usage 	: 	
 	
-1) 	List of Quiz API :-
-
+##1) List of Quiz API :-
 	
 Controller Name
 quizzes_controller/index
