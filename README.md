@@ -1,41 +1,36 @@
 #ASSESSMENT ENGINE :
-
-	Assessment Engine is a performance evaluation tool which helps the instructor to analyze performance by creating Quiz/Test and evaluating the student's performance.
+Assessment Engine is a performance evaluation tool which helps the instructor to analyze performance by creating Quiz/Test and evaluating the student's performance.
 
 #1 Main Features :
 	
 
 ##Quiz :
-	CRUD of Quiz
-	Quiz List
-	Duplicate whole Quiz with Questions
-	Get the scores information of the Quiz
-	Shuffle Question in the Quiz
-	Shuffle Answer in the Question 
+	* CRUD of Quiz
+	* Quiz List
+	* Duplicate whole Quiz with Questions
+	* Get the scores information of the Quiz
+	* Shuffle Question in the Quiz
+	* Shuffle Answer in the Question
 
 ##Question :
-	CRUD of Question
-	Question Bank(List of Questions of all Quizzes )
-	List of Questions per Quiz
+	* CRUD of Question
+	* Question Bank(List of Questions of all Quizzes )
+	* List of Questions per Quiz
 
 ##Quiz Submission :
-	Manual / Automatically Quiz Submission
-	Grade Quiz
-	Quiz Submission Results
-	Quiz Attempt history of the user
+	* Manual / Automatically Quiz Submission
+	* Grade Quiz
+	* Quiz Submission Results
+	* Quiz Attempt history of the user
 
 
 #2 Installation :
 
 For All Mac OS / Linux / Window you need to install `ruby 2.0.0  & Git`.
 
-You can install Ruby from here. 
-
-You can install Git from here. 
+You can install Ruby from [here](http://railsapps.github.io/installrubyonrails-ubuntu.html).
 				 	
-Go to console/terminal and Clone the code of `assessment_engine` repository in your system from here.
-		
-`$ git clone assessment_engine_repo_clone_url`
+Go to console/terminal and Clone the code of `assessment_engine` repository in your system provided above.
 
 Go to assessment_engine folder in the terminal.
 	
@@ -57,32 +52,25 @@ You can use any API in your application like this.
 			
 `https://localhost:30001/api/v1/quizzes`
 	
-#3 Usage 	: 	
+#3 Usage:
 	
 ##1) List of Quiz API :-
 	
-Controller Name
-quizzes_controller/index
-EndPoint
-http:/root_path/api/v1/quizzes?context_id={context_id}&client_id={client_id}&user_id={user_id}&role={role}
-Method
-GET
-Required/Mandatory Parameters
-user_id, context_id, role and client_id
-Curl
-curl -X GET --header 'Accept: application/json' --header 'X-API-KEY: {your_api_key}'
-http:/root_path/api/v1/quizzes?context_id={context_id}&client_id={client_id}&user_id={user_id}&role={role}
+Controller Name: quizzes_controller/index
+EndPoint: http:/root_path/api/v1/quizzes?context_id={context_id}&user_id={user_id}&role={role}
+Method: GET
+Required/Mandatory Parameters: user_id, context_id, role and client_id
 
+Curl: curl -X GET --header 'Accept: application/json' --header 'X-API-KEY: {your_api_key}' http:/root_path/api/v1/quizzes?context_id={context_id}&user_id={user_id}&role={role}
 	
-Response 	of API :
-
-Success :	
-
+Response of API :
+Success :
 If their quizzes are present then it will get success response.
 Status Code : 200
 Response : list of Quiz as JSON.
 Ex.
 	
+```json
 {
 "quizzes": [
 {
@@ -92,8 +80,6 @@ Ex.
 "context_id": 1,
 "resource_link_id": "1",
 "points_possible": null,
-"context_type": null,
-"workflow_state": null,
 "shuffle_answers": false,
 "show_correct_answers": false,
 "time_limit": null,
@@ -101,7 +87,6 @@ Ex.
 "quiz_type": "graded_assessment",
 "lock_at": null,
 "unlock_at": null,
-"could_be_locked": null,
 "due_at": null,
 "question_count": null,
 "published_at": null,
@@ -114,7 +99,6 @@ Ex.
 "show_correct_answers_at_time": null,
 "hide_correct_answers_at_date": null,
 "hide_correct_answers_at_time": null,
-"one_time_result": null,
 "show_correct_answers_after_last_attempt": null,
 "created_at": "2016-10-27T10:22:28.000Z",
 "updated_at": "2016-10-27T10:22:28.000Z",
@@ -128,36 +112,29 @@ Ex.
 },
 …
 }
-
-Error 	: 
+```
+##Error: 
 
 If you are getting error while using any of the API, then you can recognize error with error code below.	
 
-Error Code
-Error Message
-400
-Bad Request
-401
-Unauthorized
-403
-Forbidden
-404
-Entity Not found 
-422
-Unprocessable Entity
-500
-Internal Server Error
+###Error Code
+Error | Message
+------------ | -------------
+400 | Bad Request
+401 | Unauthorized
+403 | Forbidden
+404 | Entity Not found 
+422 | Unprocessable Entity
+500 | Internal Server Error
+
+#4 Compatibility:
 	
-
-
-4 Compatibility 	:
+This OpenAPI is created with "Rails  4.1" & "Ruby 2.2.3".
 	
-This 	OpenAPI is created with "Rails  4.1" & "Ruby 2.0.0".
-	
-5 License 	:
+#5 License :
 
-GNU AFFERO GENERAL PUBLIC LICENSE, Version 3 (AGPL-3.0)
+GNU AFFERO GENERAL PUBLIC LICENSE, Version 3 [(AGPL-3.0)](http://www.gnu.org/licenses/agpl.html)
 
-6 Contributors :
+#6 Contributors :
 		
-Söoryen Technologies & Café Learn, Inc.
+[Söoryen Technologies](www.sooryen.com) & [Café Learn, Inc](www.cafelearn.com).
