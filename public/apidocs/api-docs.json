@@ -1,0 +1,20 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://192.168.1.33:3001",
+  "apis": [
+    {
+      "path": "/apidocs/api/v1/quizzes.{format}",
+      "description": "Quizzes"
+    },
+    {
+      "path": "/apidocs/api/v1/quiz_questions.{format}",
+      "description": "QuizQuestions"
+    },
+    {
+      "path": "/apidocs/api/v1/quiz_submissions.{format}",
+      "description": "QuizSubmissions"
+    }
+  ],
+  "authorizations": null
+}

@@ -1,0 +1,222 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://192.168.1.33:3001",
+  "resourcePath": "quiz_questions",
+  "apis": [
+    {
+      "path": "/api/v1/quizzes/{quiz_id}/quiz_questions",
+      "operations": [
+        {
+          "summary": "Fetches all questions attached to Quiz.",
+          "notes": "List of all questions attached to quiz.",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "quiz_id",
+              "type": "string",
+              "description": "Resource link id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Context id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::QuizQuestions#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/{quiz_id}/quiz_questions",
+      "operations": [
+        {
+          "summary": "Create Question for quiz.",
+          "notes": "Creating the question and attaching it to the quiz.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Context Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role [ 'Instructor', 'Student' ]",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "quiz_id",
+              "type": "string",
+              "description": "Resource link id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "question[question_text]",
+              "type": "string",
+              "description": "Question text",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "question[question_type]",
+              "type": "string",
+              "description": "Question type [multiple_choice_question true_false_question short_answer_question multiple_answers_question multiple_dropdowns_question matching_question].",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "question[points_possible]",
+              "type": "integer",
+              "description": "Point assigned to question.",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "question[answers]",
+              "type": "enum",
+              "description": "Answer option body.",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::QuizQuestions#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/{quiz_id}/quiz_questions/{id}",
+      "operations": [
+        {
+          "summary": "Showing the question information.",
+          "notes": "Showing the question information and its attributes.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Context Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "quiz_id",
+              "type": "string",
+              "description": "Resource Link Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "string",
+              "description": "Question Id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::QuizQuestions#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/{quiz_id}/quiz_questions/{id}",
+      "operations": [
+        {
+          "summary": "Destroying the quiz question.",
+          "notes": "Destroying the question and all information related attached to the question.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Context Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "quiz_id",
+              "type": "string",
+              "description": "Resource Link Id",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "string",
+              "description": "Question Id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::QuizQuestions#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

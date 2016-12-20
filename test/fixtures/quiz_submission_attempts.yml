@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quiz_submission_id: 1
+  submission_data: MyText
+  score: 9.99
+  kept_score: 9.99
+  quiz_data: MyText
+  started_at: 2016-05-12 07:46:58
+  end_at: 2016-05-12 07:46:58
+  finished_at: 2016-05-12 07:46:58
+  workflow_state: MyString
+  created_by: 1
+  updated_by: 1
+  fudge_points: 9.99
+  quiz_points_possible: 9.99
+  extra_time: 1
+  manually_unlocked: false
+  manually_scored: false
+  score_before_regrade: false
+  was_preview: false
+  has_seen_results: false
+
+two:
+  quiz_submission_id: 1
+  submission_data: MyText
+  score: 9.99
+  kept_score: 9.99
+  quiz_data: MyText
+  started_at: 2016-05-12 07:46:58
+  end_at: 2016-05-12 07:46:58
+  finished_at: 2016-05-12 07:46:58
+  workflow_state: MyString
+  created_by: 1
+  updated_by: 1
+  fudge_points: 9.99
+  quiz_points_possible: 9.99
+  extra_time: 1
+  manually_unlocked: false
+  manually_scored: false
+  score_before_regrade: false
+  was_preview: false
+  has_seen_results: false

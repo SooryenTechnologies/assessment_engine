@@ -1,0 +1,85 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://192.168.1.33:3001",
+  "resourcePath": "quiz_submissions",
+  "apis": [
+    {
+      "path": "/api/v1/quizzes/{quiz_id}/quiz_submissions",
+      "operations": [
+        {
+          "summary": "Submit the response for quiz.",
+          "notes": "Submit the response/attempt of the student for the quiz.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Context Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role (For Student only.)",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "first_name",
+              "type": "string",
+              "description": "First name of the student.",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "last_name",
+              "type": "string",
+              "description": "Last name of the student.",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "email",
+              "type": "string",
+              "description": "Email of the student.",
+              "required": true
+            },
+            {
+              "paramType": "path",
+              "name": "quiz_id",
+              "type": "string",
+              "description": "Resource link id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::QuizSubmissions#create",
+          "method": "post"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

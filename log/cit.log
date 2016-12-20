@@ -1,0 +1,13 @@
+  [1m[36m (285.7ms)[0m  [1mBEGIN[0m
+  [1m[35mAdminUser Exists (287.7ms)[0m  SELECT  1 AS one FROM `admin_users`  WHERE `admin_users`.`email` = BINARY 'ram@sooryen.com' LIMIT 1
+  [1m[36mSQL (287.2ms)[0m  [1mINSERT INTO `admin_users` (`created_at`, `email`, `encrypted_password`, `updated_at`) VALUES ('2016-06-11 11:02:31', 'ram@sooryen.com', '$2a$10$VA1SkGIBkKfOc.rGX03a3uFqoVQQca4OzEDYS7noKkKCn.GL/vKGi', '2016-06-11 11:02:31')[0m
+  [1m[35m (305.9ms)[0m  COMMIT
+Started GET "/api/v1/quizzes/get_the_scores_information" for 127.0.0.1 at 2016-07-21 07:16:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (302.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Api::V1::QuizzesController#get_the_scores_information as JSON
+  Parameters: {"course_id"=>"10", "id"=>"10", "context_id"=>"10", "user_id"=>"13", "resource_link_ids"=>["192", "193", "213", "214", "215", "213", "216", "213", "265", "101", "105", "109", "110", "111", "112", "113", "114", "115", "117", "143", "144", "145", "147", "148", "150", "152", "153", "154", "155", "156", "157", "160", "161", "163", "166", "167", "189", "191", "194", "195", "101", "101", "110", "110", "110", "196", "105", "218", "218", "232", "270", "272", "275", "277", "310", "318", "334", "404", "405", "406", "119", "120", "107", "122", "122", "170", "171", "407", "408", "409", "186", "186", "279", "283", "395", "396", "398", "400", "349", "354", "361", "364", "379", "380", "381", "382", "383", "384", "386", "387", "389", "391", "393", "285", "285", "285", "288", "291", "298", "299", "299", "301", "312", "313", "315", "321", "322", "325", "326", "329", "330", "336", "337", "356", "358", "225", "225", "227"], "role"=>"Instructor"}
+  [1m[35mClient Load (326.3ms)[0m  SELECT  `clients`.* FROM `clients`  WHERE `clients`.`api_key` = 'xIT_iU8ImfkbqE0gyiSmkTfiULL-HW9JVN2FdNgN4wE' LIMIT 1
+  [1m[36mUser Load (311.8ms)[0m  [1mSELECT  `users`.* FROM `users`  WHERE `users`.`recieved_user_id` = '13' LIMIT 1[0m
+  [1m[35mContext Load (305.7ms)[0m  SELECT  `contexts`.* FROM `contexts`  WHERE `contexts`.`context` = '10' LIMIT 1
+Completed 404 Not Found in 4101ms (Views: 12.8ms | ActiveRecord: 3867.4ms)
+Started GET "/api/v1/quizzes/get_the_scores_information" for 127.0.0.1 at 2016-07-21 07:18:00 +0000

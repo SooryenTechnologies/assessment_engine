@@ -1,0 +1,41 @@
+Authenticate/Authorization Overview
+
+
+
+Authentication 
+
+Message signing approach from OAuth 1.0a protocol [OAuth, 10] to secure its message interactions between the TC and Assessment Tool (AT). 
+
+Process Flow
+OAuth signing requires a key and shared secret to sign messages.
+The key is transmitted with each message, as well as an OAuth-generated signature based on the key. 
+The AT looks up the secret based on the provided key and re-computes the signature and compares the recomputed signature with the transmitted signature to verify the sender's credentials.
+
+Admin Tasks
+1)  CafeLearn register with Sooryen and gets a API key and secret.
+2)  Assessment Tool will store Client Info, key and hash(secret) in the DB.
+
+
+Authorization
+We will provide a API for TC to add/upload user data CSV file. Every API call will contain user_id and context_id which will allows us to check Users permissions for that action.
+
+CSV format:
+user_id, role, context_id
+
+context_id == unique id of the course from which the user is accessing the app. If a app were added multiple times to the same course, this id would be the same regardless of which link was used to launch the app.
+
+Admin Task
+1) Cafe Learn will use Oauth to authenicate
+2) Then upload the CSV file using API.
+3) The AT will store the file (S3) with date_timestamp
+4) The AT always populates the DB with latest file. The S3 bucket will maintain all versions of this file.
+
+
+User Identity Assertion
+Assessment tool will be assessed by one or more instructors, students into through a link/button on the Tool Consumer side. Any time a student, instructor, administrator, clicks the link they will be directed to the our Tool via a signed POST request (Oauth). It is our responsibility to confirm the signature on the POST request. If the signature is invalid then none of the information should be trusted.
+If the signature is valid then we will accept the identity assertion provided by the Tool Consumer. We will then return a access token/consumer token which will be used for all our subequent API calls. 
+
+Each API call must include Access token, context_id, user_id
+
+Flow for Create a Quiz
+

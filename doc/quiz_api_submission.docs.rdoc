@@ -1,0 +1,21 @@
+                                             Prefix Verb       URI Pattern     
+
+                  duplicate_quiz_api_v1_quizzes GET        /api/v1/quizzes/duplicate_quiz(.:format)                               api/v1/quizzes#duplicate_quiz {:format=>:json}
+        grade_quiz_api_v1_quiz_quiz_submissions GET        /api/v1/quizzes/:quiz_id/quiz_submissions/grade_quiz(.:format)         api/v1/quiz_submissions#grade_quiz {:format=>:json}
+
+assessment_answers_api_v1_quiz_quiz_submissions GET        /api/v1/quizzes/:quiz_id/quiz_submissions/assessment_answers(.:format) api/v1/quiz_submissions#assessment_answers {:format=>:json}
+
+   create_student_api_v1_quiz_quiz_submissions GET        /api/v1/quizzes/:quiz_id/quiz_submissions/create_student(.:format)     api/v1/quiz_submissions#create_student {:format=>:json}
+
+                   api_v1_quiz_quiz_submissions GET        /api/v1/quizzes/:quiz_id/quiz_submissions(.:format)                    api/v1/quiz_submissions#index {:format=>:json}
+                                                POST       /api/v1/quizzes/:quiz_id/quiz_submissions(.:format)                    api/v1/quiz_submissions#create {:format=>:json}
+                    api_v1_quiz_quiz_submission GET        /api/v1/quizzes/:quiz_id/quiz_submissions/:id(.:format)                api/v1/quiz_submissions#show {:format=>:json}
+                                                PATCH      /api/v1/quizzes/:quiz_id/quiz_submissions/:id(.:format)                api/v1/quiz_submissions#update {:format=>:json}
+                                                PUT        /api/v1/quizzes/:quiz_id/quiz_submissions/:id(.:format)                api/v1/quiz_submissions#update {:format=>:json}
+                                                DELETE     /api/v1/quizzes/:quiz_id/quiz_submissions/:id(.:format)                api/v1/quiz_submissions#destroy {:format=>:json}
+           api_v1_quiz_quiz_submission_attempts GET        /api/v1/quizzes/:quiz_id/quiz_submission_attempts(.:format)            api/v1/quiz_submission_attempts#index {:format=>:json}
+                                                POST       /api/v1/quizzes/:quiz_id/quiz_submission_attempts(.:format)            api/v1/quiz_submission_attempts#create {:format=>:json}
+            api_v1_quiz_quiz_submission_attempt GET        /api/v1/quizzes/:quiz_id/quiz_submission_attempts/:id(.:format)        api/v1/quiz_submission_attempts#show {:format=>:json}
+                                                PATCH      /api/v1/quizzes/:quiz_id/quiz_submission_attempts/:id(.:format)        api/v1/quiz_submission_attempts#update {:format=>:json}
+                                                PUT        /api/v1/quizzes/:quiz_id/quiz_submission_attempts/:id(.:format)        api/v1/quiz_submission_attempts#update {:format=>:json}
+                                                DELETE     /api/v1/quizzes/:quiz_id/quiz_submission_attempts/:id(.:format)        api/v1/quiz_submission_attempts#destroy {:format=>:json}

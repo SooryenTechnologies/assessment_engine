@@ -1,0 +1,383 @@
+//API Documentation:
+=================================================================
+Below mentioned Request Headers will be required in all API calls.
+      Cache-Control: "no-cache"
+      X-Assessment-Engine-API-Key: ABCDEFGHIJKLMNOP
+      X-Assessment-Engine-Access-Token: asdfcasdfge867sdf6sd7f8adsf
+
+
+## Quiz APIS ##
+- Create Quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes
+      Method: POST
+      parameters: {
+            user_id: "user_id"
+      }
+      request_body:
+            {
+                  title: "test",
+                  description: "test",
+                  points_possible: "number / addition of marks all questions",
+                  resource_link_id: "resource_link_id",
+                  context_id: "section_id/ (course_module/lo_id)"
+                  context_type: "Course/Section"
+                  workflow_state: "",
+                  shuffle_answers: "true" ,
+                  show_correct_answers: "boolean",
+                  time_limit: "integer",
+                  allowed_attempts: "integer",
+                  scoring_policy: "character varying(255)",
+                  quiz_type: "character varying(255)",
+                  lock_at: "timestamp without time zone",
+                  unlock_at: "timestamp without time zone",
+                  deleted_at: "timestamp without time zone",
+                  could_be_locked: "boolean",
+                  cloned_item_id: "bigint",
+                  unpublished_question_count: "integer DEFAULT 0",
+                  due_at: "timestamp without time zone",
+                  question_count: "integer",
+                  published_at: "timestamp without time zone",
+                  last_edited_at: timestamp without time zone,
+                  anonymous_submissions: "boolean",
+                  hide_results: "character varying(255)",
+                  one_question_at_a_time: "boolean",
+                  cant_go_back: "boolean",
+                  show_correct_answers_at: "timestamp without time zone",
+                  hide_correct_answers_at: "timestamp without time zone",
+                  only_visible_to_overrides: "boolean",
+                  one_time_results: "boolean",
+                  show_correct_answers_last_attempt: "boolean"
+            }
+      responses: { quiz_id: "quiz id",
+                   status_code: 200,
+                   quiz_data: {
+                        "id":"12",
+                        "quiz_id":"10",
+                        "quiz_group_id":null,
+                        "quiz_title": "quiz_name",
+                        "description": "test",
+                        "time_limit": "integer",
+                        "allowed_attempts": "integer",
+                        "scoring_policy": "character varying(255)",
+                        "quiz_type": "character varying(255)",
+                        "published_at": "timestamp without time zone",
+                        "last_edited_at": timestamp without time zone,
+                        "anonymous_submissions": "boolean",
+                        "hide_results": "character varying(255)",
+                        "one_question_at_a_time": "boolean",
+                        "cant_go_back": "boolean",
+                        "show_correct_answers_at": "timestamp without time zone",
+                        "hide_correct_answers_at": "timestamp without time zone",
+                   }
+                  }
+
+- Update Quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:id
+      Method: PUT
+      parameters: {
+            user_id: "user_id"
+      }
+      request_body:
+            {
+                  title: "test",
+                  description: "test",
+                  points_possible: "number / addition of marks all questions",
+                  resource_link_id: "resource_link_id",
+                  context_id: "section_id/ (course_module/lo_id)"
+                  context_type: "Course/Section"
+                  workflow_state: "",
+                  shuffle_answers: "true" ,
+                  show_correct_answers: "boolean",
+                  time_limit: "integer",
+                  allowed_attempts: "integer",
+                  scoring_policy: "character varying(255)",
+                  quiz_type: "character varying(255)",
+                  lock_at: "timestamp without time zone",
+                  unlock_at: "timestamp without time zone",
+                  deleted_at: "timestamp without time zone",
+                  could_be_locked: "boolean",
+                  cloned_item_id: "bigint",
+                  unpublished_question_count: "integer DEFAULT 0",
+                  due_at: "timestamp without time zone",
+                  question_count: "integer",
+                  published_at: "timestamp without time zone",
+                  last_edited_at: timestamp without time zone,
+                  anonymous_submissions: "boolean",
+                  hide_results: "character varying(255)",
+                  one_question_at_a_time: "boolean",
+                  cant_go_back: "boolean",
+                  show_correct_answers_at: "timestamp without time zone",
+                  hide_correct_answers_at: "timestamp without time zone",
+                  only_visible_to_overrides: "boolean",
+                  one_time_results: "boolean",
+                  show_correct_answers_last_attempt: "boolean"
+            }
+      responses: {
+                        { quiz_id: "quiz id",
+                         status_code: 200,
+                         quiz_data: {
+                              "id":"12",
+                              "quiz_id":"10",
+                              "quiz_group_id":null,
+                              "quiz_title": "quiz_name",
+                              "description": "test",
+                              "time_limit": "integer",
+                              "allowed_attempts": "integer",
+                              "scoring_policy": "character varying(255)",
+                              "quiz_type": "character varying(255)",
+                              "published_at": "timestamp without time zone",
+                              "last_edited_at": timestamp without time zone,
+                              "anonymous_submissions": "boolean",
+                              "hide_results": "character varying(255)",
+                              "one_question_at_a_time": "boolean",
+                              "cant_go_back": "boolean",
+                              "show_correct_answers_at": "timestamp without time zone",
+                              "hide_correct_answers_at": "timestamp without time zone",
+                         }
+                        }
+                  }
+
+- Show Quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:id
+      Method: GET
+      Parameters:
+            {
+                  quiz_id: "integer"
+            }
+      responses: { quiz_id: "quiz id",
+                   status_code: 200,
+                   quiz_data: {
+                        "id":"12",
+                        "quiz_id":"10",
+                        "quiz_group_id":null,
+                        "quiz_title": "quiz_name",
+                        "description": "test",
+                        "time_limit": "integer",
+                        "allowed_attempts": "integer",
+                        "scoring_policy": "character varying(255)",
+                        "quiz_type": "character varying(255)",
+                        "published_at": "timestamp without time zone",
+                        "last_edited_at": timestamp without time zone,
+                        "anonymous_submissions": "boolean",
+                        "hide_results": "character varying(255)",
+                        "one_question_at_a_time": "boolean",
+                        "cant_go_back": "boolean",
+                        "show_correct_answers_at": "timestamp without time zone",
+                        "hide_correct_answers_at": "timestamp without time zone",
+                   }
+                  }
+
+- Delete Quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:id
+      Method: DELETE
+      Parameters:
+            {
+                  quiz_id: "integer",
+                  user_id: "integer"
+            }
+      responses: { status_code: 200}
+
+- List of Quizzes for a course API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes
+      Method: GET
+      Parameters:
+      responses: { 
+                        status_code: 200,
+                        {"quizzes":[
+                              {"quiz_id":"3","due_dates":[{"due_at":null,"unlock_at":null,"lock_at":null,"base":true}],"all_dates":[{"due_at":null,"unlock_at":null,"lock_at":null,"base":true}]},
+                              {"quiz_id":"4","due_dates":[{"due_at":null,"unlock_at":null,"lock_at":null,"base":true}],"all_dates":[{"due_at":null,"unlock_at":null,"lock_at":null,"base":true}]},
+                              {"quiz_id":"7","due_dates":[{"due_at":null,"unlock_at":null,"lock_at":null,"base":true}],"all_dates":[{"due_at":null,"unlock_at":null,"lock_at":null,"base":true}]}
+                              ]
+                        }
+                  }
+
+=================================================================
+## Question APIS ##
+
+- Question list of Quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:quiz_id/questions
+      Method: GET
+      Parameters:
+            {
+                  user_id: "bigint",
+                  quiz_id: "integer"
+            }
+      response: { 
+                        "status_code": 200,
+                        [{"id":1,"name":"Question",
+                              "question_data":
+                                    {"id":null,"points_possible":1,"question_type":"multiple_choice_question","question_name":"Question","name":"Question","question_text":"\u003Cp\u003EQuiz question 1 \u003Cspan\u003EQuiz question 1?\u003C/span\u003E\u003C/p\u003E","answers":[{"id":6178,"text":"A1"},{"id":5306,"text":"A2"},{"id":7753,"text":"A3"},{"id":5740,"text":"A4"}],"text_after_answers":"","assessment_question_id":null},"context_id":2,"context_type":"Course","workflow_state":"active","created_at":"2016-05-03T05:36:02Z","updated_at":"2016-05-03T05:36:02Z","deleted_at":null,"position":1},
+                        {"id":1,"name":"Question",
+                              "question_data":
+                                    {"id":null,"points_possible":1,"question_type":"multiple_choice_question","question_name":"Question","name":"Question","question_text":"\u003Cp\u003EQuiz question 1 \u003Cspan\u003EQuiz question 1?\u003C/span\u003E\u003C/p\u003E","answers":[{"id":6178,"text":"A1"},{"id":5306,"text":"A2"},{"id":7753,"text":"A3"},{"id":5740,"text":"A4"}],"text_after_answers":"","assessment_question_id":null},"context_id":2,"context_type":"Course","workflow_state":"active","created_at":"2016-05-03T05:36:02Z","updated_at":"2016-05-03T05:36:02Z","deleted_at":null,"position":1}]
+
+                 }
+
+- Create question API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:quiz_id/questions
+      Method: POST
+      parameters: {
+            user_id: "integer"
+      }
+      request_body:
+            {
+                  quiz_id: "bigint",
+                  quiz_group_id: "bigint(if question group will be added)",
+                  question_data: "text",
+                  assessment_question_version: "integer",
+                  position: "integer",
+                  points_possible: "",
+                  answers: { options: [{answer_1: "option1", answer_2: "option2", answer_3: "option3" }]
+                              }
+                  created_at: "timestamp without time zone",
+                  updated_at: "timestamp without time zone",
+                  workflow_state character varying(255)
+            }
+      response: {
+                        "status_code": 200,
+                        {
+                              "id":"12",
+                              "quiz_id":"10",
+                              "quiz_group_id":null,
+                              "assessment_question_id":"11",
+                              "position":1,
+                              "question_name":"Question",
+                              "question_type":"multiple_choice_question",
+                              "question_text":"\u003Cp\u003EQuestion 14 ?\u003C/p\u003E",
+                              "points_possible":1,
+                              "correct_comments":"",
+                              "incorrect_comments":"",
+                              "neutral_comments":"",
+                              "correct_comments_html":"\u003Cp\u003Ecomment1\u003C/\u003E",
+                              "incorrect_comments_html":"\u003Cp\u003EWrongcomment\u003C/\u003E",
+                              "neutral_comments_html":"\u003Cp\u003Enormal comment\u003C/p\u003E",
+                              "answers":[
+                                                {"id":"9121","text":"1"},
+                                                {"id":"5619","text":"2"},
+                                                {"id":"1450","text":"3"},
+                                                {"id":"9335","text":"4"}
+                                          ]
+                        }
+
+                }
+
+- Update question API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:quiz_id/questions/:id
+      Method: PUT
+      parameters: {
+            user_id: "integer"
+      }
+      request_body:
+            {
+                  quiz_id: "bigint",
+                  quiz_group_id: "bigint(if question group will be added)",
+                  question_data: "text",
+                  assessment_question_version: "integer",
+                  position: "integer",
+                  created_at: "timestamp without time zone",
+                  updated_at: "timestamp without time zone",
+                  workflow_state character varying(255)
+            }
+      response: {
+                        "status_code": 200,
+                        {
+                              "id":"12",
+                              "quiz_id":"10",
+                              "quiz_group_id":null,
+                              "assessment_question_id":"11",
+                              "position":1,
+                              "question_name":"Question",
+                              "question_type":"multiple_choice_question",
+                              "question_text":"\u003Cp\u003EQuestion 14 ?\u003C/p\u003E",
+                              "points_possible":1,
+                              "correct_comments":"",
+                              "incorrect_comments":"",
+                              "neutral_comments":"",
+                              "correct_comments_html":"\u003Cp\u003Ecomment1\u003C/\u003E",
+                              "incorrect_comments_html":"\u003Cp\u003EWrongcomment\u003C/\u003E",
+                              "neutral_comments_html":"\u003Cp\u003Enormal comment\u003C/p\u003E",
+                              "answers":[
+                                                {"id":"9121","text":"1"},
+                                                {"id":"5619","text":"2"},
+                                                {"id":"1450","text":"3"},
+                                                {"id":"9335","text":"4"}
+                                          ]
+                        }
+
+                }
+- Show Question API(Probably needed):
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:quiz_id/questions/:id
+      Method: GET
+      parameters: {
+            user_id: "integer"
+      }
+      responses: {
+                        "status_code": 200,
+                        "id":"12",
+                        "quiz_id":"10",
+                        "quiz_group_id":null,
+                        "assessment_question_id":"11",
+                        "position":1,
+                        "question_name":"Question"
+                  }
+
+- Delete Question from quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/quizzes/:quiz_id/questions/:id
+      Method: DELETE
+      Parameters:
+            {
+                  user_id: "integer"
+            }
+      responses: { status_code: 200}
+
+- Get the Question from question bank API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/get_questions_from_question_bank
+      Method: GET
+      parameters: {
+            user_id: "integer"
+      }
+      response: { "status_code": 200,
+                  {"question":
+                        {"id":1,"name":"Question",
+                              "question_data":
+                                    {"id":null,"points_possible":1,"question_type":"multiple_choice_question","question_name":"Question","name":"Question","question_text":"\u003Cp\u003EQuiz question 1 \u003Cspan\u003EQuiz question 1?\u003C/span\u003E\u003C/p\u003E","answers":[{"id":6178,"text":"A1"},{"id":5306,"text":"A2"},{"id":7753,"text":"A3"},{"id":5740,"text":"A4"}],"text_after_answers":"","assessment_question_id":null},"context_id":2,"context_type":"Course","workflow_state":"active","created_at":"2016-05-03T05:36:02Z","updated_at":"2016-05-03T05:36:02Z","deleted_at":null,"position":1},
+                        {"id":1,"name":"Question",
+                              "question_data":
+                                    {"id":null,"points_possible":1,"question_type":"multiple_choice_question","question_name":"Question","name":"Question","question_text":"\u003Cp\u003EQuiz question 1 \u003Cspan\u003EQuiz question 1?\u003C/span\u003E\u003C/p\u003E","answers":[{"id":6178,"text":"A1"},{"id":5306,"text":"A2"},{"id":7753,"text":"A3"},{"id":5740,"text":"A4"}],"text_after_answers":"","assessment_question_id":null},"context_id":2,"context_type":"Course","workflow_state":"active","created_at":"2016-05-03T05:36:02Z","updated_at":"2016-05-03T05:36:02Z","deleted_at":null,"position":1}
+                  }
+                }
+
+- Add Question from question bank to quiz API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/add_question_to_quiz
+      Method: DELETE
+      Parameters:
+            {
+                  quiz_id: "integer",
+                  question_id: "integer"
+            }
+      responses: { "status_code": 200}
+
+- Add Quiz (Duplicate already created quiz) API:
+      User Role to perform this action: INSTRUCTOR, ADMIN
+      Endpoint: /api/v1/duplicate_quiz
+      Method: GET
+      Parameters:
+            {
+                  quiz_id: "integer",
+                  context_id: "integer",
+                  user_id: "integer"
+            }
+      responses: { "status_code": 200}
+

@@ -1,0 +1,2 @@
+class UsersPermissionsController < ApplicationController
+end

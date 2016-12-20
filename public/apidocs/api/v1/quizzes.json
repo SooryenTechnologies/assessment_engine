@@ -1,0 +1,818 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://192.168.1.33:3001",
+  "resourcePath": "quizzes",
+  "apis": [
+    {
+      "path": "/api/v1/quizzes/duplicate_quiz",
+      "operations": [
+        {
+          "summary": "Duplicate Quiz.",
+          "notes": "Pass source resource_link_id and destination resource_link_id to duplicate the quiz.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Course or section id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role of User",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "source_resource_link_id",
+              "type": "string",
+              "description": "Source resource_link_id (Which quiz is to be copied)",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "destination_resource_link_id",
+              "type": "string",
+              "description": "Destination resource_link_id (At which quiz the source quiz should be duplicate.)",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#duplicate_quiz",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/question_bank",
+      "operations": [
+        {
+          "summary": "Get the questions with the string search or with the ids.",
+          "notes": "Pass question ids or string to get the question from question from question bank.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "search",
+              "type": "string",
+              "description": "Search parameter",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "questions_id[]",
+              "type": "string",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#question_bank",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/get_the_scores_information",
+      "operations": [
+        {
+          "summary": "Get the score information for all students.",
+          "notes": "Pass resource_link_ids to get the information for all scores.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Course or section id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role of User",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "resource_link_ids[]",
+              "type": "string",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#get_the_scores_information",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/get_assessments_by_resource_link_ids",
+      "operations": [
+        {
+          "summary": "Get the quizzes with the resource_link_ids.",
+          "notes": "Pass resource_link_ids to get the quizzes.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Course or section id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role of User",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "resource_link_ids[]",
+              "type": "string",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#get_assessments_by_resource_link_ids",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/add_question_to_quiz",
+      "operations": [
+        {
+          "summary": "Add questions to the quiz from question bank.",
+          "notes": "Pass question_ids to add in the quizzes.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Course or section id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role of User",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "resource_link_id",
+              "type": "string",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "questions_id[]",
+              "type": "string",
+              "description": null,
+              "required": false
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#add_question_to_quiz",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes",
+      "operations": [
+        {
+          "summary": "Fetches all Quizzes.",
+          "notes": "List of all quizzes for context(Course/Section) passed by the user.",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "context_id",
+              "type": "string",
+              "description": "Course or section id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role of User",
+              "required": false
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#index",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes",
+      "operations": [
+        {
+          "summary": "Create Quiz.",
+          "notes": "Quiz Creation for particular context ",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "first_name",
+              "type": "string",
+              "description": "First Name",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "last_name",
+              "type": "string",
+              "description": "Last Name",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "email",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role [ 'Instructor', 'Student' ]",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[title]",
+              "type": "string",
+              "description": "Quiz Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[description]",
+              "type": "string",
+              "description": "Quiz Description",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[context_id]",
+              "type": "string",
+              "description": "Context Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[quiz_type]",
+              "type": "string",
+              "description": "Quiz type. [graded_assessment]",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[resource_link_id]",
+              "type": "string",
+              "description": "Resource Link Id. It should be unique key to recognize the quiz.",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[time_limit_check]",
+              "type": "boolean",
+              "description": "Quiz Time limit Check. If user checked this then quiz will be timed.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[time_limit]",
+              "type": "integer",
+              "description": "Quiz Time limit. If time_limit_check then only it will work. Value should be in minutes",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[allow_multiple_attempt_check]",
+              "type": "boolean",
+              "description": "Quiz Allow multiple attempts",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[allowed_attempts]",
+              "type": "integer",
+              "description": "Allowed attempts allow_multiple_attempt_check is checked then only it will work.(1-10)",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[one_question_at_a_time]",
+              "type": "boolean",
+              "description": "Single question at a time will be shown to students during quiz submission.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[lock_question_after_answer]",
+              "type": "boolean",
+              "description": "The question will be locked after student will submit the reponse.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_quiz_response]",
+              "type": "boolean",
+              "description": "Whether to show the quiz response submitted by the student.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_correct_answers]",
+              "type": "boolean",
+              "description": "Whether to show the correct answers to students in quiz response.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[once_after_each_attempt]",
+              "type": "boolean",
+              "description": "Whether to show response after each attempt.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_correct_answers_at_date]",
+              "type": "date",
+              "description": "Showing the quiz response between these time period. Response start date.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_correct_answers_at_time]",
+              "type": "time",
+              "description": "Response show start time",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[hide_correct_answers_at_date]",
+              "type": "date",
+              "description": "Response hide end date.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[hide_correct_answers_at_time]",
+              "type": "time",
+              "description": "Response hide end time.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[lock_at]",
+              "type": "date",
+              "description": "Lock quiz submission at this date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[unlock_at]",
+              "type": "date",
+              "description": "Unlock quiz submission at this date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[due_at]",
+              "type": "datetime",
+              "description": "Quiz due at",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[published_at]",
+              "type": "datetime",
+              "description": "Quiz published at this date.",
+              "required": false
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#create",
+          "method": "post"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/{id}",
+      "operations": [
+        {
+          "summary": "Showing the quiz information.",
+          "notes": "List of all attributes for the quiz.",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "string",
+              "description": "Resource Link Id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#show",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/{id}",
+      "operations": [
+        {
+          "summary": "Update Quiz.",
+          "notes": "Quiz updation with different attributes ",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "first_name",
+              "type": "string",
+              "description": "First Name",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "last_name",
+              "type": "string",
+              "description": "Last Name",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "email",
+              "type": "string",
+              "description": "Email",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "user_id",
+              "type": "string",
+              "description": "User Id",
+              "required": true
+            },
+            {
+              "paramType": "query",
+              "name": "role",
+              "type": "string",
+              "description": "Role [ 'Instructor', 'Student' ]",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[title]",
+              "type": "string",
+              "description": "Quiz Title",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[description]",
+              "type": "string",
+              "description": "Quiz Description",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[context_id]",
+              "type": "string",
+              "description": "Context Id",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[quiz_type]",
+              "type": "string",
+              "description": "Quiz type. [graded_assessment]",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[resource_link_id]",
+              "type": "string",
+              "description": "Resource Link Id. It should be unique key to recognize the quiz.",
+              "required": true
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[time_limit_check]",
+              "type": "boolean",
+              "description": "Quiz Time limit Check. If user checked this then quiz will be timed.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[time_limit]",
+              "type": "integer",
+              "description": "Quiz Time limit. If time_limit_check then only it will work. Value should be in minutes",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[allow_multiple_attempt_check]",
+              "type": "boolean",
+              "description": "Quiz Allow multiple attempts",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[allowed_attempts]",
+              "type": "integer",
+              "description": "Allowed attempts allow_multiple_attempt_check is checked then only it will work.(1-10)",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[one_question_at_a_time]",
+              "type": "boolean",
+              "description": "Single question at a time will be shown to students during quiz submission.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[lock_question_after_answer]",
+              "type": "boolean",
+              "description": "The question will be locked after student will submit the reponse.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_quiz_response]",
+              "type": "boolean",
+              "description": "Whether to show the quiz response submitted by the student.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_correct_answers]",
+              "type": "boolean",
+              "description": "Whether to show the correct answers to students in quiz response.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[once_after_each_attempt]",
+              "type": "boolean",
+              "description": "Whether to show response after each attempt.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_correct_answers_at_date]",
+              "type": "date",
+              "description": "Showing the quiz response between these time period. Response start date.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[show_correct_answers_at_time]",
+              "type": "time",
+              "description": "Response show start time",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[hide_correct_answers_at_date]",
+              "type": "date",
+              "description": "Response hide end date.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[hide_correct_answers_at_time]",
+              "type": "time",
+              "description": "Response hide end time.",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[lock_at]",
+              "type": "date",
+              "description": "Lock quiz submission at this date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[unlock_at]",
+              "type": "date",
+              "description": "Unlock quiz submission at this date",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[due_at]",
+              "type": "datetime",
+              "description": "Quiz due at",
+              "required": false
+            },
+            {
+              "paramType": "form",
+              "name": "quiz[published_at]",
+              "type": "datetime",
+              "description": "Quiz published at this date.",
+              "required": false
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#update",
+          "method": "patch"
+        }
+      ]
+    },
+    {
+      "path": "/api/v1/quizzes/{id}",
+      "operations": [
+        {
+          "summary": "Destroying the quiz.",
+          "notes": "Destroying the quiz and all information related to it.",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "string",
+              "description": "Resource Link Id",
+              "required": true
+            },
+            {
+              "paramType": "header",
+              "name": "X-API-KEY",
+              "type": "string",
+              "description": "Authentication token",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 401,
+              "responseModel": null,
+              "message": "Unauthorized"
+            }
+          ],
+          "nickname": "Api::V1::Quizzes#destroy",
+          "method": "delete"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}

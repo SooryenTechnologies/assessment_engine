@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quiz_id: 1
+  question_bank_id: 1
+  question_type_id: 1
+  question_data: MyText
+  workflow_state: MyString
+  created_by: 1
+  updated_by: 1
+
+two:
+  quiz_id: 1
+  question_bank_id: 1
+  question_type_id: 1
+  question_data: MyText
+  workflow_state: MyString
+  created_by: 1
+  updated_by: 1

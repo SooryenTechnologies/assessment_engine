@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  context_id: 1
+  points_possible: 9.99
+  context_type: MyString
+  workflow_state: MyString
+  shuffle_answers: false
+  show_correct_answers: false
+  time_limit: 1
+  allowed_attempts: 1
+  quiz_type: MyString
+  lock_at: 2016-05-12 07:44:12
+  unlock_at: 2016-05-12 07:44:12
+  could_be_locked: false
+  due_at: 2016-05-12 07:44:12
+  question_count: 1
+  published_at: 2016-05-12 07:44:12
+  last_edited_at: 2016-05-12 07:44:12
+  created_by: 1
+  updated_by: 1
+  hide_results: MyString
+  one_question_at_a_time: false
+  show_correct_answers_at: 2016-05-12 07:44:12
+  hide_correct_answers_at: 2016-05-12 07:44:12
+  one_time_result: false
+  show_correct_answers_after_last_attempt: false
+
+two:
+  title: MyString
+  description: MyText
+  context_id: 1
+  points_possible: 9.99
+  context_type: MyString
+  workflow_state: MyString
+  shuffle_answers: false
+  show_correct_answers: false
+  time_limit: 1
+  allowed_attempts: 1
+  quiz_type: MyString
+  lock_at: 2016-05-12 07:44:12
+  unlock_at: 2016-05-12 07:44:12
+  could_be_locked: false
+  due_at: 2016-05-12 07:44:12
+  question_count: 1
+  published_at: 2016-05-12 07:44:12
+  last_edited_at: 2016-05-12 07:44:12
+  created_by: 1
+  updated_by: 1
+  hide_results: MyString
+  one_question_at_a_time: false
+  show_correct_answers_at: 2016-05-12 07:44:12
+  hide_correct_answers_at: 2016-05-12 07:44:12
+  one_time_result: false
+  show_correct_answers_after_last_attempt: false
