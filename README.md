@@ -2,7 +2,6 @@
 Assessment Engine is a performance evaluation tool which helps the instructor to analyze performance by creating Quiz/Test and evaluating the student's performance.
 
 #1 Main Features :
-	
 
 ##Quiz :
 	* CRUD of Quiz
@@ -57,17 +56,20 @@ You can use any API in your application like this.
 ##1) List of Quiz API :-
 	
 Controller Name: quizzes_controller/index
+
 EndPoint: http:/root_path/api/v1/quizzes?context_id={context_id}&user_id={user_id}&role={role}
+
 Method: GET
+
 Required/Mandatory Parameters: user_id, context_id, role and client_id
 
 Curl: curl -X GET --header 'Accept: application/json' --header 'X-API-KEY: {your_api_key}' http:/root_path/api/v1/quizzes?context_id={context_id}&user_id={user_id}&role={role}
 	
-Response of API :
+###Response of API :
 Success :
-If their quizzes are present then it will get success response.
-Status Code : 200
-Response : list of Quiz as JSON.
+>If their quizzes are present then it will get success response.
+>Status Code : 200
+Response : list of Quizzes as JSON.
 Ex.
 	
 ```json
