@@ -140,4 +140,4 @@ GNU AFFERO GENERAL PUBLIC LICENSE, Version 3 [(AGPL-3.0)](http://www.gnu.org/lic
 
 #6 Contributors :
 		
-[Söoryen Technologies](www.sooryen.com) & [Café Learn, Inc](www.cafelearn.com).
+Söoryen Technologies(www.sooryen.com) & Café Learn, Inc(www.cafelearn.com).
